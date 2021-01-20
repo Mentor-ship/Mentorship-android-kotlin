@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchView android:id="@+id/search_bar"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:iconifiedByDefault="false"
+    android:paddingStart="-8dp"
+    android:background="@drawable/custom_search_bar"
+    android:queryHint="@string/what_are_you_looking_for"
+    android:queryBackground="@null"
+    tools:ignore="RtlSymmetry"
+     />

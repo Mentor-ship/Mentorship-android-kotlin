@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.RegistrationLastStepFragment">
+    android:background="@color/backgroundColor"
+    android:fillViewport="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="30dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/text_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/almost_done"
+            android:textSize="@dimen/font_huge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="32dp"
+            android:hint="@string/phone_number"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxCornerRadiusTopEnd="@dimen/corner_radius_small"
+            app:boxCornerRadiusTopStart="@dimen/corner_radius_small"
+            app:layout_constraintTop_toBottomOf="@+id/text_create_account">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:inputType="phone"
+                android:textSize="@dimen/font_semi_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/first_name_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:hint="@string/first_name"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxCornerRadiusTopEnd="@dimen/corner_radius_small"
+            app:boxCornerRadiusTopStart="@dimen/corner_radius_small"
+            app:layout_constraintTop_toBottomOf="@+id/phone_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/first_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/font_semi_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/last_name_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:hint="@string/last_name"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxCornerRadiusTopEnd="@dimen/corner_radius_small"
+            app:boxCornerRadiusTopStart="@dimen/corner_radius_small"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/font_semi_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/country_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:hint="@string/country"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxCornerRadiusTopEnd="@dimen/corner_radius_small"
+            app:boxCornerRadiusTopStart="@dimen/corner_radius_small"
+            app:layout_constraintTop_toBottomOf="@+id/last_name_input_layout">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/country_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:inputType="textShortMessage"
+                android:textSize="@dimen/font_semi_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/city_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:hint="@string/city"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxCornerRadiusTopEnd="@dimen/corner_radius_small"
+            app:boxCornerRadiusTopStart="@dimen/corner_radius_small"
+            app:layout_constraintTop_toBottomOf="@+id/country_input_layout">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/city_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:nextFocusForward="@id/button_register"
+                android:inputType="textShortMessage"
+                android:textSize="@dimen/font_semi_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button_register"
+            style="@style/Custom.Button.Corners.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/lato_regular"
+            android:minHeight="60dp"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_semi_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/city_input_layout"
+            app:rippleColor="@color/mediumGrey"
+            android:onClick="onClickRegister"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
