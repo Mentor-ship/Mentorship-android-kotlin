@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.LoginFragment"
@@ -59,7 +59,7 @@
         android:id="@+id/registrationLastStepFragment"
         android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.RegistrationLastStepFragment"
         android:label="RegistrationLastStepFragment"
-        tools:layout="@layout/fragment_registerLastStep"/>
+        tools:layout="@layout/fragment_register_last_step"/>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.SettingFragment"

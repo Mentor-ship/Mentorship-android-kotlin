@@ -111,8 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_forgot_password"
-        app:rippleColor="@color/mediumGrey"
-        android:onClick="onClickLogin"/>
+        app:rippleColor="@color/mediumGrey"/>
 
     <TextView
         android:id="@+id/text_need_account"
