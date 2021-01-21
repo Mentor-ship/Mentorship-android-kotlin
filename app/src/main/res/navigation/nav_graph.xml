@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_vacancyBySearchFragment"
+            app:destination="@id/vacancyBySearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registrationFragment_to_registrationLastStepFragment"
+            app:destination="@id/registrationLastStepFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationLastStepFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.RegistrationLastStepFragment"
+        android:label="RegistrationLastStepFragment"
+        tools:layout="@layout/fragment_registerLastStep"/>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_settingFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyBySearchFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.VacancyBySearchFragment"
+        android:label="VacancyBySearchFragment"
+        tools:layout="@layout/fragment_vacancybysearch">
+        <action
+            android:id="@+id/action_vacancyBySearchFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyDetailsFragment"
+        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.VacancyDetailsFragment"
+        android:label="VacancyDetailsFragment"
+        tools:layout="@layout/fragment_vacancy_details">
+    </fragment>
+</navigation>

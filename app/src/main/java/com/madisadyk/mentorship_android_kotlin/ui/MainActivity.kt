@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.madisadyk.mentorship_android_kotlin.R
 import com.madisadyk.mentorship_android_kotlin.repositorie.MentorshipRepository
+import com.madisadyk.mentorship_android_kotlin.utils.SessionManager
 import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
 import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModelProviderFactory
 
@@ -20,5 +21,9 @@ class MainActivity : AppCompatActivity() {
         val viewModelProviderFactory = MentorshipViewModelProviderFactory(repository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory)
             .get(MentorshipViewModel::class.java)
+
+        if (SessionManager.fetchToken(this) != null) {
+
+        }
     }
 }
