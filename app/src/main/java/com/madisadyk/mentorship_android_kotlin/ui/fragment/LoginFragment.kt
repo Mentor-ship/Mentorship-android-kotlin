@@ -20,13 +20,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
 
-        val sessionManager = SessionManager(activity as MainActivity)
+        setEmptyListeners()
 
-        button_login.setOnClickListener {
-            if (validateEmptyFields()) {
-                viewModel.login(login_edit_text.text.toString(), password_edit_text.text.toString())
-            }
-        }
+        val sessionManager = SessionManager(activity as MainActivity)
 
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer { response ->
             when(response) {
@@ -34,22 +30,41 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     sessionManager.saveToken(response.data?.token.toString())
                     findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                 }
-                is Resource.Error -> {}
+                is Resource.Error -> {
+                    password_input_layout.error = getString(R.string.login_password_incorrect)
+                }
                 is Resource.Loading -> {}
             }
         })
+
+        button_login.setOnClickListener {
+            if (validateEmptyFields()) {
+                viewModel.login(login_edit_text.text.toString(), password_edit_text.text.toString())
+            }
+        }
+
+        button_register.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+        }
     }
 
     private fun validateEmptyFields(): Boolean {
         var flag = true
         if (login_edit_text.text.toString().isEmpty()) {
-            login_input_layout.error = R.string.field_is_required.toString()
+            login_input_layout.error = getString(R.string.field_is_required)
             flag = false
         }
         if (password_edit_text.text.toString().isEmpty()) {
-            password_input_layout.error = R.string.field_is_required.toString()
+            password_input_layout.error = getString(R.string.field_is_required)
             flag = false
         }
         return flag
+    }
+
+    private fun setEmptyListeners() {
+        (activity as MainActivity).createEmptyTextListener(
+            (activity as MainActivity), login_edit_text, login_input_layout)
+        (activity as MainActivity).createEmptyTextListener(
+            (activity as MainActivity), password_edit_text, password_input_layout)
     }
 }

@@ -19,7 +19,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel = (activity as MainActivity).viewModel
 
         if (SessionManager.fetchToken(activity as MainActivity) == null) {
-            findNavController().navigate(R.id.loginFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
             (activity as MainActivity).nav_bar.visibility = View.GONE
         }
     }
