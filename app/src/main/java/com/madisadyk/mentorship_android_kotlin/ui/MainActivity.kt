@@ -7,11 +7,14 @@ import android.text.TextWatcher
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.madisadyk.mentorship_android_kotlin.R
 import com.madisadyk.mentorship_android_kotlin.repositorie.MentorshipRepository
 import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
 import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModelProviderFactory
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         val viewModelProviderFactory = MentorshipViewModelProviderFactory(repository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory)
             .get(MentorshipViewModel::class.java)
+
+        nav_bar.setupWithNavController(navHostFragment.findNavController())
     }
 
     fun createEmptyTextListener(

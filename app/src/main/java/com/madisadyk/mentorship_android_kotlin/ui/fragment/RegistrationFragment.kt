@@ -52,12 +52,13 @@ class RegistrationFragment : Fragment(R.layout.fragment_register) {
                             email_input_layout.error = getString(R.string.email_in_use)
                         }
                         else if (!hasError) {
+                            viewModel.name4reg = username_edit_text.text.toString()
+                            viewModel.email4reg = email_edit_text.text.toString()
+                            viewModel.password4reg = password_reg_edit_text.text.toString()
                             findNavController().navigate(
                                 R.id.action_registrationFragment_to_registrationLastStepFragment)
                         }
                     }
-                    is Resource.Error -> {}
-                    is Resource.Loading -> {}
                 }
             })
         }

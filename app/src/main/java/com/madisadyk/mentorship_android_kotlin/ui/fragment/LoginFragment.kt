@@ -33,7 +33,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 is Resource.Error -> {
                     password_input_layout.error = getString(R.string.login_password_incorrect)
                 }
-                is Resource.Loading -> {}
             }
         })
 

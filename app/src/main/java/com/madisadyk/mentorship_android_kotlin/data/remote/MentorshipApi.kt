@@ -23,7 +23,7 @@ interface MentorshipApi {
     @POST("user/signup")
     suspend fun register(
         @Body user: User
-    ): Response<CompanyName>
+    ): Response<LoginResponse>
 
     @POST("user/login")
     suspend fun login(
