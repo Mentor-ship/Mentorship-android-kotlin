@@ -1,16 +1,17 @@
-package com.madisadyk.mentorship_android_kotlin.viewmodel
+package com.madisadyk.mentorship_android_kotlin.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.madisadyk.mentorship_android_kotlin.model.*
-import com.madisadyk.mentorship_android_kotlin.repositorie.MentorshipRepository
+import com.madisadyk.mentorship_android_kotlin.data.model.*
+import com.madisadyk.mentorship_android_kotlin.data.repository.MentorshipRepository
 import com.madisadyk.mentorship_android_kotlin.utils.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import androidx.hilt.lifecycle.ViewModelInject
 
-class MentorshipViewModel(
-    val repository: MentorshipRepository
+class MentorshipViewModel @ViewModelInject constructor(
+    private val repository: MentorshipRepository
 ) : ViewModel() {
 
     val loginResponse: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()

@@ -1,4 +1,4 @@
-package com.madisadyk.mentorship_android_kotlin.adapter
+package com.madisadyk.mentorship_android_kotlin.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.madisadyk.mentorship_android_kotlin.R
-import com.madisadyk.mentorship_android_kotlin.model.Vacancy
+import com.madisadyk.mentorship_android_kotlin.data.model.Vacancy
 import kotlinx.android.synthetic.main.nearby_job_list_item.view.*
 
 class NearbyVacancyAdapter : RecyclerView.Adapter<NearbyVacancyAdapter.VacancyViewHolder>() {

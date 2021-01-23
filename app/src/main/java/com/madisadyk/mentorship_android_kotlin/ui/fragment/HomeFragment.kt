@@ -7,12 +7,12 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.madisadyk.mentorship_android_kotlin.R
-import com.madisadyk.mentorship_android_kotlin.adapter.NearbyVacancyAdapter
-import com.madisadyk.mentorship_android_kotlin.adapter.PopularVacancyAdapter
+import com.madisadyk.mentorship_android_kotlin.ui.adapter.NearbyVacancyAdapter
+import com.madisadyk.mentorship_android_kotlin.ui.adapter.PopularVacancyAdapter
 import com.madisadyk.mentorship_android_kotlin.ui.MainActivity
 import com.madisadyk.mentorship_android_kotlin.utils.Resource
 import com.madisadyk.mentorship_android_kotlin.utils.SessionManager
-import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
+import com.madisadyk.mentorship_android_kotlin.ui.viewmodel.MentorshipViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -32,31 +32,31 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         } else {
             (activity as MainActivity).nav_bar.visibility = View.VISIBLE
             setupRecyclerView()
-        }
 
-        popularVacancyAdapter.setOnItemClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_vacancyDetailsFragment)
-        }
+            popularVacancyAdapter.setOnItemClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_vacancyDetailsFragment)
+            }
 
-        nearbyVacancyAdapter.setOnItemClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_vacancyDetailsFragment)
-        }
+            nearbyVacancyAdapter.setOnItemClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_vacancyDetailsFragment)
+            }
 
-        viewModel.vacancyResponse.observe(viewLifecycleOwner, Observer { response ->
-            when (response) {
-                is Resource.Success -> {
-                    response.data?.let { vacancyResponse ->
-                        //заглушка
-                        popularVacancyAdapter.differ.submitList(vacancyResponse)
-                        nearbyVacancyAdapter.differ.submitList(vacancyResponse)
-                        swipe_refresh.isRefreshing = false
+            viewModel.vacancyResponse.observe(viewLifecycleOwner, Observer { response ->
+                when (response) {
+                    is Resource.Success -> {
+                        response.data?.let { vacancyResponse ->
+                            //заглушка
+                            popularVacancyAdapter.differ.submitList(vacancyResponse)
+                            nearbyVacancyAdapter.differ.submitList(vacancyResponse)
+                            swipe_refresh.isRefreshing = false
+                        }
                     }
                 }
-            }
-        })
+            })
 
-        swipe_refresh.setOnRefreshListener {
-            viewModel.getAllVacancies()
+            swipe_refresh.setOnRefreshListener {
+                viewModel.getAllVacancies()
+            }
         }
     }
 

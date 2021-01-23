@@ -1,4 +1,4 @@
-package com.madisadyk.mentorship_android_kotlin.model
+package com.madisadyk.mentorship_android_kotlin.data.model
 
 class LoginResponse(
     val token: String,

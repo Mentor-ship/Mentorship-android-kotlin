@@ -5,29 +5,24 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.madisadyk.mentorship_android_kotlin.R
-import com.madisadyk.mentorship_android_kotlin.repositorie.MentorshipRepository
-import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
-import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModelProviderFactory
+import com.madisadyk.mentorship_android_kotlin.ui.viewmodel.MentorshipViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    lateinit var viewModel: MentorshipViewModel
+    val viewModel: MentorshipViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val repository = MentorshipRepository()
-        val viewModelProviderFactory = MentorshipViewModelProviderFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelProviderFactory)
-            .get(MentorshipViewModel::class.java)
 
         nav_bar.setupWithNavController(navHostFragment.findNavController())
     }

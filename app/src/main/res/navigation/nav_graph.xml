@@ -49,9 +49,6 @@
         <action
             android:id="@+id/action_searchFragment_to_vacancyDetailsFragment"
             app:destination="@id/vacancyDetailsFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_vacancyBySearchFragment"
-            app:destination="@id/vacancyBySearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -83,15 +80,6 @@
         <action
             android:id="@+id/action_settingFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/vacancyBySearchFragment"
-        android:name="com.madisadyk.mentorship_android_kotlin.ui.fragment.VacancyBySearchFragment"
-        android:label="VacancyBySearchFragment"
-        tools:layout="@layout/fragment_vacancybysearch">
-        <action
-            android:id="@+id/action_vacancyBySearchFragment_to_vacancyDetailsFragment"
-            app:destination="@id/vacancyDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/vacancyDetailsFragment"

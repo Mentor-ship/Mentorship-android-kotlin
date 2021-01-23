@@ -1,4 +1,4 @@
-package com.madisadyk.mentorship_android_kotlin.model
+package com.madisadyk.mentorship_android_kotlin.data.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

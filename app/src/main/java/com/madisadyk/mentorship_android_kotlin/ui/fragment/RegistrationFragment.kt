@@ -3,7 +3,6 @@ package com.madisadyk.mentorship_android_kotlin.ui.fragment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.EditText
@@ -13,7 +12,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.madisadyk.mentorship_android_kotlin.R
 import com.madisadyk.mentorship_android_kotlin.ui.MainActivity
 import com.madisadyk.mentorship_android_kotlin.utils.Resource
-import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
+import com.madisadyk.mentorship_android_kotlin.ui.viewmodel.MentorshipViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.button_login
 import kotlinx.android.synthetic.main.fragment_register.password_input_layout

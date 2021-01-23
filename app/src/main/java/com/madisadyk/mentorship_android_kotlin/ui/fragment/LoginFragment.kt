@@ -9,7 +9,7 @@ import com.madisadyk.mentorship_android_kotlin.R
 import com.madisadyk.mentorship_android_kotlin.ui.MainActivity
 import com.madisadyk.mentorship_android_kotlin.utils.Resource
 import com.madisadyk.mentorship_android_kotlin.utils.SessionManager
-import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
+import com.madisadyk.mentorship_android_kotlin.ui.viewmodel.MentorshipViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment(R.layout.fragment_login) {

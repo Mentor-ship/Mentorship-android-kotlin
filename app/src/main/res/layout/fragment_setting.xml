@@ -29,8 +29,7 @@
                 android:layout_marginStart="20dp"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                app:icon="@drawable/ic_baseline_arrow_back_dark_24"
-                android:onClick="onBackButtonPressed"/>
+                app:icon="@drawable/ic_baseline_arrow_back_dark_24"/>
 
             <TextView
                 android:layout_width="wrap_content"

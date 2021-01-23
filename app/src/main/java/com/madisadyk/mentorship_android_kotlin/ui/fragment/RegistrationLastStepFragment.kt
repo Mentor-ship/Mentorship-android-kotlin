@@ -1,7 +1,6 @@
 package com.madisadyk.mentorship_android_kotlin.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
@@ -12,13 +11,13 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputLayout
 import com.madisadyk.mentorship_android_kotlin.R
-import com.madisadyk.mentorship_android_kotlin.model.User
+import com.madisadyk.mentorship_android_kotlin.data.model.User
 import com.madisadyk.mentorship_android_kotlin.ui.MainActivity
 import com.madisadyk.mentorship_android_kotlin.utils.Constant.Companion.CITIES
 import com.madisadyk.mentorship_android_kotlin.utils.Constant.Companion.COUNTRIES
 import com.madisadyk.mentorship_android_kotlin.utils.Resource
 import com.madisadyk.mentorship_android_kotlin.utils.SessionManager
-import com.madisadyk.mentorship_android_kotlin.viewmodel.MentorshipViewModel
+import com.madisadyk.mentorship_android_kotlin.ui.viewmodel.MentorshipViewModel
 import kotlinx.android.synthetic.main.fragment_register_last_step.*
 
 class RegistrationLastStepFragment : Fragment(R.layout.fragment_register_last_step) {
