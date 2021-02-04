@@ -1,0 +1,104 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/Custom.TextView</item>
+        <item name="bottomNavigationStyle">@style/Custom.BottomNavigationView</item>
+        <item name="textAppearanceButton">@style/Custom.Button.TextAppearance</item>
+        <item name="shapeAppearanceSmallComponent">@style/Custom.ShapeAppearance.Medium</item>
+    </style>
+    
+    <style name="Custom.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="Custom.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/Custom.BottomNavigationView.Colors</item>
+    </style>
+
+    <style name="Custom.BottomNavigationView.Colors" parent="">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="Custom.Button.IconOnly" parent="Widget.MaterialComponents.Button">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:minWidth">16dp</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="shapeAppearance">@style/Custom.ShapeAppearance.Small</item>
+    </style>
+
+    <style name="Custom.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/Custom.ShapeAppearance.Medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="iconGravity">end</item>
+    </style>
+
+    <style name="Custom.Button.Corners.Small" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/Custom.ShapeAppearance.Small</item>
+    </style>
+
+    <style name="Custom.Button.TextAppearance" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="Custom.ShapeAppearance.Normal" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/corner_radius_normal</item>
+    </style>
+
+    <style name="Custom.ShapeAppearance.Medium" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/corner_radius_medium</item>
+    </style>
+
+    <style name="Custom.ShapeAppearance.LeftRounded.Medium" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSizeTopLeft">@dimen/corner_radius_medium</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner_radius_medium</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="Custom.ShapeAppearance.RightRounded.Medium" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopRight">@dimen/corner_radius_medium</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_radius_medium</item>
+    </style>
+
+    <style name="Custom.Button.LeftRounded" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/Custom.ShapeAppearance.LeftRounded.Medium</item>
+    </style>
+
+    <style name="Custom.Button.RightRounded" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/Custom.ShapeAppearance.RightRounded.Medium</item>
+    </style>
+
+    <style name="Custom.ShapeAppearance.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/corner_radius_small</item>
+    </style>
+
+    <style name="Custom.Chip.Filter" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@style/Custom.ShapeAppearance.Medium</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="chipStartPadding">15dp</item>
+        <item name="chipBackgroundColor">@color/custom_chip_state_bg</item>
+        <item name="chipStrokeWidth">1.5dp</item>
+        <item name="chipStrokeColor">@color/custom_chip_state_stroke</item>
+        <item name="android:textColor">@color/custom_chip_state_text</item>
+        <item name="chipEndPadding">15dp</item>
+        <item name="chipMinHeight">45dp</item>
+    </style>
+
+</resources>

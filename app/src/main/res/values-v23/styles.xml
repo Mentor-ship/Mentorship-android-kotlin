@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/backgroundColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/Custom.TextView</item>
+        <item name="bottomNavigationStyle">@style/Custom.BottomNavigationView</item>
+        <item name="textAppearanceButton">@style/Custom.Button.TextAppearance</item>
+        <item name="shapeAppearanceSmallComponent">@style/Custom.ShapeAppearance.Medium</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
